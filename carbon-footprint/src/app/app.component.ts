@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ClickMode, Container, Engine, HoverMode, MoveDirection, OutMode } from 'tsparticles-engine';
 import { loadFull } from "tsparticles";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,12 @@ import { loadFull } from "tsparticles";
 })
 export class AppComponent {
   title = 'Carbon Footprint';
+
+  constructor(private router:Router){
+    if(localStorage.getItem("HideLanding") == "yes"){
+      router.navigateByUrl("home")
+    }
+  }
 
   id = "tsparticles";
 
@@ -22,11 +29,11 @@ export class AppComponent {
       interactivity: {
           events: {
               onClick: {
-                  enable: true,
+                  enable: false,
                   mode: ClickMode.push,
               },
               onHover: {
-                  enable: true,
+                  enable: false,
                   mode: HoverMode.repulse,
               },
               resize: false,

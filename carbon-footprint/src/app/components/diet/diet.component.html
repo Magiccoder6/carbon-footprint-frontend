@@ -1,0 +1,17 @@
+<div class="m-2">
+  <div class="row m-2">
+    <form [formGroup]="form">
+      <div class="col">
+        <label>Consumer Type</label>
+          <select formControlName="consumerType" class="form-select">
+            <option *ngFor="let f of data.ConsumerTypes">{{f}}</option>
+          </select>
+      </div>
+    </form>
+  </div>
+  <div style="width: 100%;" class="text-center">
+    <button (click)="calculate()" class="btn btn-primary">Calculate</button>
+  </div>
+
+</div>
+

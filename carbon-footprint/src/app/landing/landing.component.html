@@ -1,4 +1,5 @@
 <div class="center-screen">
-  <video src="https://carbonfootprintmp.blob.core.windows.net/storage-carbonfootprint/Carbonfootprint.mp4" controls style="position: relative;;height: 100%; width:100%;"></video>
-  <button>Skip</button>
+  <video autoplay src="https://carbonfootprintmp.blob.core.windows.net/storage-carbonfootprint/Carbonfootprint.mp4" controls style="position: relative;;height: 100%; width:100%;"></video>
+  <button class="btn btn-primary" (click)="goHome(false)">Go Home</button>&nbsp;&nbsp;
+  <button class="btn btn-danger" (click)="goHome(true)">Dont show me this again</button>
 </div>

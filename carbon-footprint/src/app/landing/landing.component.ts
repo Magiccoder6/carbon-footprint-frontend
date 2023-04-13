@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing',
@@ -6,8 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./landing.component.scss']
 })
 export class LandingComponent {
-  constructor(){
+  constructor(private router:Router){
+
   }
 
+  goHome(dontShowLandingAgain:boolean){
+    if(dontShowLandingAgain){
+      localStorage.setItem("HideLanding", "yes");
+    }
+
+    this.router.navigateByUrl("home");
+  }
 
 }

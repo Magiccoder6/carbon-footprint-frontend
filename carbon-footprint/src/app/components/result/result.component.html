@@ -1,0 +1,14 @@
+<div class="m-3">
+  <h5 class="m-3">Total Footprint: {{getFootPrintTotal}} LBS
+    <img *ngIf="getFootPrintTotal<16000" width="40" height="40" src="assets/images/hug.png"/>
+    <img *ngIf="getFootPrintTotal>16000" width="40" height="40" src="assets/images/sad.png"/>
+  </h5>
+
+
+  <div *ngFor="let i of results" style="border-style: solid; padding: 0.5em; border-radius: 0.5em; margin-top: 10px;position: relative;background-color: aquamarine;">
+    <img (click)="removeRecord(i)" width="20" height="20" src="assets/images/remove.png" style="cursor: pointer; position: absolute; right:5px; top:5px;"/>
+    <b>{{i.title}}</b><br>
+    <b>{{i.result}} kg CO2</b><br>
+    <small>Date: {{i.date | date : 'medium'}}</small>
+  </div>
+</div>

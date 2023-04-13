@@ -1,0 +1,68 @@
+<div style="position:relative; width: 100%; height: 80vh; background-color: rgba(255, 255, 255, 0.867);top:10vh">
+  <h3 class="text-center m-1"><img width="60" height="60" src="assets/images/carbon-footprint.png"/>Calculate Your Carbon Footprint</h3>
+
+  <ul class="nav nav-tabs" ngbNav #nav="ngbNav" [(activeId)]="active">
+    <li [ngbNavItem]="1" class="nav-item">
+      <a ngbNavLink class="nav-link"><b>Individual</b></a>
+      <ng-template ngbNavContent>
+
+        <ul class="nav nav-tabs mt-3" ngbNav #navChild1="ngbNav" [(activeId)]="active2">
+          <li [ngbNavItem]="11" class="nav-item">
+            <a ngbNavLink class="nav-link"><img width="40" height="40" src="assets/images/diet.png"/></a>
+            <ng-template ngbNavContent>
+              <b class="m-1">Diet</b>
+              <app-diet [nav]="nav"></app-diet>
+            </ng-template>
+          </li>
+          <li [ngbNavItem]="55" class="nav-item">
+            <a ngbNavLink class="nav-link"><img width="40" height="40" src="assets/images/vehicle.png"/></a>
+            <ng-template ngbNavContent>
+              <b class="m-1">Private Transportation</b>
+              <app-private-vehicle [nav]="nav"></app-private-vehicle>
+            </ng-template>
+          </li>
+          <li [ngbNavItem]="22" class="nav-item">
+            <a ngbNavLink class="nav-link"><img width="40" height="40" src="assets/images/bus.png"/></a>
+            <ng-template ngbNavContent>
+              <b class="m-1">Public Transportation</b>
+              <h1 class="text-danger">IN DEVELOPMENT</h1>
+            </ng-template>
+          </li>
+          <li [ngbNavItem]="33" class="nav-item">
+            <a ngbNavLink class="nav-link"><img width="40" height="40" src="assets/images/green-house.png"/></a>
+            <ng-template ngbNavContent>
+              <b class="m-1">Home</b>
+              <h1 class="text-danger">IN DEVELOPMENT</h1>
+            </ng-template>
+          </li>
+          <li [ngbNavItem]="44" class="nav-item">
+            <a ngbNavLink class="nav-link"><img width="40" height="40" src="assets/images/plane.png"/></a>
+            <ng-template ngbNavContent>
+              <b class="m-1">In air flights</b>
+              <h1 class="text-danger">IN DEVELOPMENT</h1>
+            </ng-template>
+          </li>
+        </ul>
+        <div [ngbNavOutlet]="navChild1"></div>
+
+      </ng-template>
+    </li>
+    <li [ngbNavItem]="2" class="nav-item">
+      <a ngbNavLink class="nav-link"><b>Organization</b></a>
+      <ng-template ngbNavContent>
+        <b class="m-1">Organization Calculation</b>
+        <h1 class="text-danger">IN DEVELOPMENT</h1>
+      </ng-template>
+    </li>
+    <li [ngbNavItem]="3" class="nav-item">
+      <a ngbNavLink class="nav-link"><b>Result</b></a>
+      <ng-template ngbNavContent>
+        <b class="m-1">My Results</b>
+        <app-result></app-result>
+      </ng-template>
+    </li>
+  </ul>
+
+  <div [ngbNavOutlet]="nav"></div>
+
+</div>
